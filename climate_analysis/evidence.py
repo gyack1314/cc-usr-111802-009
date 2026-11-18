@@ -18,6 +18,13 @@ CREATE TABLE IF NOT EXISTS observations (
   FOREIGN KEY(document_source,document_id,document_revision)
     REFERENCES documents(source,document_id,revision)
 );
+CREATE TABLE IF NOT EXISTS explanations (
+  explanation_id TEXT NOT NULL, version TEXT NOT NULL,
+  known_at TEXT NOT NULL, period TEXT NOT NULL, region TEXT NOT NULL,
+  published_at TEXT NOT NULL, supersedes TEXT, narrative TEXT NOT NULL,
+  detail_json TEXT NOT NULL, basis_json TEXT NOT NULL, fingerprint TEXT NOT NULL,
+  PRIMARY KEY(explanation_id,version)
+);
 """
 
 def connect(path):

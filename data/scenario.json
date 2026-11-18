@@ -1,0 +1,493 @@
+{
+  "known_at": [
+    "2026-08-01T00:00:00+00:00",
+    "2026-09-01T00:00:00+00:00"
+  ],
+  "explanations": [
+    {
+      "explanation_id": "exp-downstream",
+      "version": "v1",
+      "known_at": "2026-08-01T00:00:00+00:00",
+      "period": "2025水文年",
+      "region": "reach-2",
+      "published_at": "2026-08-05T00:00:00+00:00",
+      "narrative": "下游断面断流全部归因于冰川融水减少，与取水和降水年份无关。"
+    },
+    {
+      "explanation_id": "exp-downstream",
+      "version": "v2",
+      "known_at": "2026-09-01T00:00:00+00:00",
+      "period": "2025水文年",
+      "region": "reach-2",
+      "published_at": "2026-09-10T00:00:00+00:00",
+      "supersedes": "v1",
+      "narrative": "下游断面断流由冰川融水减少、支流实测来水减少、枯水年份降水径流下降和上游超许可取水共同导致；各项贡献以来源版次为准，仍存在无法归因残差，不把任何单一变化作为唯一依据；生态流量缺口仍在，补水承诺维持。"
+    }
+  ],
+  "documents": [
+    {
+      "source": "流域管理处",
+      "document_id": "ecological-flow-rule",
+      "revision": "r1",
+      "received_at": "2026-07-20T00:00:00+00:00",
+      "records": [
+        {
+          "kind": "rule",
+          "id": "rule-reach-1",
+          "revision": "r1",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "flow",
+            "region": "reach-1",
+            "unit": "万立方米",
+            "threshold": -100,
+            "direction": "below",
+            "target": 350,
+            "action": "补水"
+          }
+        },
+        {
+          "kind": "rule",
+          "id": "rule-reach-2",
+          "revision": "r1",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "flow",
+            "region": "reach-2",
+            "unit": "万立方米",
+            "threshold": -200,
+            "direction": "below",
+            "target": 600,
+            "action": "补水"
+          }
+        }
+      ]
+    },
+    {
+      "source": "水文机构",
+      "document_id": "reference-baseline",
+      "revision": "r1",
+      "received_at": "2026-07-22T00:00:00+00:00",
+      "records": [
+        {
+          "kind": "reference",
+          "id": "ref-flow-1",
+          "revision": "r1",
+          "valid_from": "2020-10-01",
+          "payload": {
+            "metric": "flow",
+            "region": "reach-1",
+            "unit": "万立方米",
+            "period": "REF",
+            "value": 500
+          }
+        },
+        {
+          "kind": "reference",
+          "id": "ref-flow-2",
+          "revision": "r1",
+          "valid_from": "2020-10-01",
+          "payload": {
+            "metric": "flow",
+            "region": "reach-2",
+            "unit": "万立方米",
+            "period": "REF",
+            "value": 520
+          }
+        },
+        {
+          "kind": "tributary_flow",
+          "id": "ref-trib-1",
+          "revision": "r1",
+          "valid_from": "2020-10-01",
+          "payload": {
+            "metric": "tributary_flow",
+            "region": "reach-1",
+            "unit": "万立方米",
+            "period": "REF",
+            "value": 120,
+            "gauge": "北支水文站"
+          }
+        },
+        {
+          "kind": "tributary_flow",
+          "id": "ref-trib-2",
+          "revision": "r1",
+          "valid_from": "2020-10-01",
+          "payload": {
+            "metric": "tributary_flow",
+            "region": "reach-2",
+            "unit": "万立方米",
+            "period": "REF",
+            "value": 250,
+            "gauge": "汇合口水文站"
+          }
+        },
+        {
+          "kind": "precipitation_runoff",
+          "id": "ref-precip-1",
+          "revision": "r1",
+          "valid_from": "2020-10-01",
+          "payload": {
+            "metric": "precipitation_runoff",
+            "region": "reach-1",
+            "unit": "万立方米",
+            "period": "REF",
+            "value": 80,
+            "year_type": "平水年"
+          }
+        },
+        {
+          "kind": "precipitation_runoff",
+          "id": "ref-precip-2",
+          "revision": "r1",
+          "valid_from": "2020-10-01",
+          "payload": {
+            "metric": "precipitation_runoff",
+            "region": "reach-2",
+            "unit": "万立方米",
+            "period": "REF",
+            "value": 150,
+            "year_type": "平水年"
+          }
+        }
+      ]
+    },
+    {
+      "source": "冰川监测机构",
+      "document_id": "glacier-estimate",
+      "revision": "r1",
+      "received_at": "2026-07-28T00:00:00+00:00",
+      "records": [
+        {
+          "kind": "glacier_melt",
+          "id": "ref-glacier-1",
+          "revision": "r1",
+          "valid_from": "2020-10-01",
+          "payload": {
+            "metric": "glacier_melt",
+            "region": "reach-1",
+            "unit": "万立方米",
+            "period": "REF",
+            "value": 300,
+            "method": "水文站实测结合模型估计"
+          }
+        },
+        {
+          "kind": "glacier_melt",
+          "id": "ref-glacier-2",
+          "revision": "r1",
+          "valid_from": "2020-10-01",
+          "payload": {
+            "metric": "glacier_melt",
+            "region": "reach-2",
+            "unit": "万立方米",
+            "period": "REF",
+            "value": 400,
+            "method": "水文站实测结合模型估计"
+          }
+        },
+        {
+          "kind": "glacier_melt",
+          "id": "glacier-1",
+          "revision": "r1",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "glacier_melt",
+            "region": "reach-1",
+            "unit": "万立方米",
+            "period": "2025水文年",
+            "value": 250,
+            "method": "实测结合模型估计",
+            "mass_balance_metres_we": -0.6
+          }
+        },
+        {
+          "kind": "glacier_melt",
+          "id": "glacier-2",
+          "revision": "r1",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "glacier_melt",
+            "region": "reach-2",
+            "unit": "万立方米",
+            "period": "2025水文年",
+            "value": 340,
+            "method": "实测结合模型估计",
+            "mass_balance_metres_we": -0.7
+          }
+        },
+        {
+          "kind": "glacier_mass_balance",
+          "id": "mass-balance-basin",
+          "revision": "r1",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "glacier_mass_balance",
+            "region": "basin",
+            "unit": "米水当量",
+            "period": "2025水文年",
+            "value": -0.8,
+            "note": "背景证据：单位为米水当量，不进入万立方米水量平衡，仅佐证冰川持续退缩"
+          }
+        }
+      ]
+    },
+    {
+      "source": "水文机构",
+      "document_id": "tributary-gauging",
+      "revision": "r1",
+      "received_at": "2026-07-25T00:00:00+00:00",
+      "records": [
+        {
+          "kind": "tributary_flow",
+          "id": "trib-1",
+          "revision": "r1",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "tributary_flow",
+            "region": "reach-1",
+            "unit": "万立方米",
+            "period": "2025水文年",
+            "value": 90,
+            "gauge": "北支水文站"
+          }
+        },
+        {
+          "kind": "tributary_flow",
+          "id": "trib-2",
+          "revision": "r1",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "tributary_flow",
+            "region": "reach-2",
+            "unit": "万立方米",
+            "period": "2025水文年",
+            "value": 180,
+            "gauge": "汇合口水文站"
+          }
+        }
+      ]
+    },
+    {
+      "source": "水文机构",
+      "document_id": "precipitation-year",
+      "revision": "r1",
+      "received_at": "2026-07-26T00:00:00+00:00",
+      "records": [
+        {
+          "kind": "precipitation_runoff",
+          "id": "precip-1",
+          "revision": "r1",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "precipitation_runoff",
+            "region": "reach-1",
+            "unit": "万立方米",
+            "period": "2025水文年",
+            "value": 35,
+            "year_type": "枯水年",
+            "anomaly_ratio": -0.35
+          }
+        },
+        {
+          "kind": "precipitation_runoff",
+          "id": "precip-2",
+          "revision": "r1",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "precipitation_runoff",
+            "region": "reach-2",
+            "unit": "万立方米",
+            "period": "2025水文年",
+            "value": 60,
+            "year_type": "枯水年",
+            "anomaly_ratio": -0.4
+          }
+        }
+      ]
+    },
+    {
+      "source": "取水许可机关",
+      "document_id": "abstraction-returns",
+      "revision": "r1",
+      "received_at": "2026-07-29T00:00:00+00:00",
+      "records": [
+        {
+          "kind": "abstraction",
+          "id": "ref-abs-1",
+          "revision": "r1",
+          "valid_from": "2020-10-01",
+          "payload": {
+            "metric": "abstraction",
+            "region": "reach-1",
+            "unit": "万立方米",
+            "period": "REF",
+            "permitted": 0,
+            "actual": 0,
+            "compliance": "符合许可"
+          }
+        },
+        {
+          "kind": "abstraction",
+          "id": "ref-abs-2",
+          "revision": "r1",
+          "valid_from": "2020-10-01",
+          "payload": {
+            "metric": "abstraction",
+            "region": "reach-2",
+            "unit": "万立方米",
+            "period": "REF",
+            "permitted": 120,
+            "actual": 100,
+            "compliance": "符合许可"
+          }
+        },
+        {
+          "kind": "abstraction",
+          "id": "abs-1",
+          "revision": "r1",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "abstraction",
+            "region": "reach-1",
+            "unit": "万立方米",
+            "period": "2025水文年",
+            "permitted": 120,
+            "actual": null,
+            "compliance": "待核报"
+          }
+        },
+        {
+          "kind": "abstraction",
+          "id": "abs-2",
+          "revision": "r1",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "abstraction",
+            "region": "reach-2",
+            "unit": "万立方米",
+            "period": "2025水文年",
+            "permitted": 220,
+            "actual": null,
+            "compliance": "待核报"
+          }
+        }
+      ]
+    },
+    {
+      "source": "观测机构",
+      "document_id": "flow-observation",
+      "revision": "r1",
+      "received_at": "2026-07-31T00:00:00+00:00",
+      "records": [
+        {
+          "kind": "observation",
+          "id": "obs-flow-1",
+          "revision": "r1",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "flow",
+            "region": "reach-1",
+            "unit": "万立方米",
+            "period": "2025水文年",
+            "value": 260
+          }
+        },
+        {
+          "kind": "observation",
+          "id": "obs-flow-2",
+          "revision": "r1",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "flow",
+            "region": "reach-2",
+            "unit": "万立方米",
+            "period": "2025水文年",
+            "value": 200
+          }
+        }
+      ]
+    },
+    {
+      "source": "冰川监测机构",
+      "document_id": "glacier-estimate",
+      "revision": "r2",
+      "received_at": "2026-08-20T00:00:00+00:00",
+      "records": [
+        {
+          "kind": "glacier_melt",
+          "id": "glacier-1",
+          "revision": "r2",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "glacier_melt",
+            "region": "reach-1",
+            "unit": "万立方米",
+            "period": "2025水文年",
+            "value": 230,
+            "method": "水量平衡模型重算",
+            "mass_balance_metres_we": -0.6,
+            "reason": "融水估计重算：修正度日因子后下调"
+          }
+        },
+        {
+          "kind": "glacier_melt",
+          "id": "glacier-2",
+          "revision": "r2",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "glacier_melt",
+            "region": "reach-2",
+            "unit": "万立方米",
+            "period": "2025水文年",
+            "value": 310,
+            "method": "水量平衡模型重算",
+            "mass_balance_metres_we": -0.7,
+            "reason": "融水估计重算：修正度日因子后下调"
+          }
+        }
+      ]
+    },
+    {
+      "source": "取水许可机关",
+      "document_id": "abstraction-returns",
+      "revision": "r2",
+      "received_at": "2026-08-22T00:00:00+00:00",
+      "records": [
+        {
+          "kind": "abstraction",
+          "id": "abs-1",
+          "revision": "r2",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "abstraction",
+            "region": "reach-1",
+            "unit": "万立方米",
+            "period": "2025水文年",
+            "permitted": 120,
+            "actual": 130,
+            "compliance": "超许可",
+            "reason": "取水记录补报（迟报），实测超过许可"
+          }
+        },
+        {
+          "kind": "abstraction",
+          "id": "abs-2",
+          "revision": "r2",
+          "valid_from": "2025-10-01",
+          "payload": {
+            "metric": "abstraction",
+            "region": "reach-2",
+            "unit": "万立方米",
+            "period": "2025水文年",
+            "permitted": 220,
+            "actual": 250,
+            "compliance": "超许可",
+            "reason": "取水记录补报（迟报），实测超过许可"
+          }
+        }
+      ]
+    }
+  ]
+}
